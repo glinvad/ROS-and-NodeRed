@@ -43,6 +43,9 @@ This will run rosbridge and create a WebSocket on port 9090 by default.
 ![the Flow](Pictures/TheFlow.png)
 
 **The Node-RED Flow can be found under Code**
+The subscriber can subscribe to multiple diffenten ros Types 
+
+The Publisher can **only** publish std_msgs/Int16, std_msgs/Int32 and std_msgs/String
 
 ## The Dashboard (and ROS Topics)
 
