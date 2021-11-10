@@ -36,17 +36,17 @@ This will run rosbridge and create a WebSocket on port 9090 by default.
 
 [node-red-contrib-ros](https://flows.nodered.org/node/node-red-contrib-ros) have been used (thank you to **nhong**)
 
-![Nodes](~/Pictures/Notes.png)
+![Nodes](/Pictures/Notes.png)
 
 ##The Flow
 
-![the Flow](~Pictures/TheFlow.png)
+![the Flow](Pictures/TheFlow.png)
 
 **The Node-RED Flow can be found under Code**
 
 ##The Dashboard (and ROS Topics)
 
-![the Flow](~Pictures/DashboardAndRosTopics.png)
+![the Flow](Pictures/DashboardAndRosTopics.png)
 
 
 
