@@ -1,0 +1,402 @@
+[
+    {
+        "id": "374390731e3fac81",
+        "type": "tab",
+        "label": "Rosbridge Example",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b44e0788.4bb1f8",
+        "type": "inject",
+        "z": "374390731e3fac81",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "Hallo",
+        "payloadType": "str",
+        "x": 450,
+        "y": 480,
+        "wires": [
+            [
+                "c2a8605a.3d57a"
+            ]
+        ]
+    },
+    {
+        "id": "bbb8147a.4447e8",
+        "type": "ros-subscribe",
+        "z": "374390731e3fac81",
+        "server": "f31cee7d.0ce31",
+        "topicname": "/nodered/int32",
+        "x": 450,
+        "y": 320,
+        "wires": [
+            [
+                "213ba9a2d9599988",
+                "c1b3d5027f1382ab"
+            ]
+        ]
+    },
+    {
+        "id": "c2a8605a.3d57a",
+        "type": "ros-publish",
+        "z": "374390731e3fac81",
+        "server": "f31cee7d.0ce31",
+        "topicname": "/nodered/string",
+        "msgtype": "std_msgs/String",
+        "x": 760,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "f4bcae9da6bf4f18",
+        "type": "inject",
+        "z": "374390731e3fac81",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "1234",
+        "payloadType": "num",
+        "x": 450,
+        "y": 620,
+        "wires": [
+            [
+                "4c00cf2c1be6244d"
+            ]
+        ]
+    },
+    {
+        "id": "4c00cf2c1be6244d",
+        "type": "ros-publish",
+        "z": "374390731e3fac81",
+        "server": "f31cee7d.0ce31",
+        "topicname": "/nodered/int16",
+        "msgtype": "std_msgs/Int16",
+        "x": 760,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "7890f3198575d823",
+        "type": "ui_numeric",
+        "z": "374390731e3fac81",
+        "name": "",
+        "label": "int16 input:",
+        "tooltip": "",
+        "group": "96e4978f26e00a22",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "65535",
+        "step": 1,
+        "className": "",
+        "x": 450,
+        "y": 680,
+        "wires": [
+            [
+                "4c00cf2c1be6244d"
+            ]
+        ]
+    },
+    {
+        "id": "647820aaae989a50",
+        "type": "inject",
+        "z": "374390731e3fac81",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "10203040",
+        "payloadType": "num",
+        "x": 460,
+        "y": 740,
+        "wires": [
+            [
+                "fea5e5c052b658cf"
+            ]
+        ]
+    },
+    {
+        "id": "fea5e5c052b658cf",
+        "type": "ros-publish",
+        "z": "374390731e3fac81",
+        "server": "f31cee7d.0ce31",
+        "topicname": "/nodered/int32",
+        "msgtype": "std_msgs/Int32",
+        "x": 760,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "c30d33bd506fa957",
+        "type": "ui_numeric",
+        "z": "374390731e3fac81",
+        "name": "",
+        "label": "int32 input:",
+        "tooltip": "",
+        "group": "96e4978f26e00a22",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "4294967296",
+        "step": 1,
+        "className": "",
+        "x": 450,
+        "y": 800,
+        "wires": [
+            [
+                "fea5e5c052b658cf"
+            ]
+        ]
+    },
+    {
+        "id": "0f450a099a2bed3f",
+        "type": "ui_text_input",
+        "z": "374390731e3fac81",
+        "name": "",
+        "label": "String input:",
+        "tooltip": "",
+        "group": "96e4978f26e00a22",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 450,
+        "y": 520,
+        "wires": [
+            [
+                "c2a8605a.3d57a"
+            ]
+        ]
+    },
+    {
+        "id": "701fc85659f31c72",
+        "type": "ros-subscribe",
+        "z": "374390731e3fac81",
+        "server": "f31cee7d.0ce31",
+        "topicname": "/nodered/int16",
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "4ccecb34aab171de",
+                "1a74bab8ee070a0a"
+            ]
+        ]
+    },
+    {
+        "id": "d5e94a4754843f8b",
+        "type": "ros-subscribe",
+        "z": "374390731e3fac81",
+        "server": "f31cee7d.0ce31",
+        "topicname": "/nodered/string",
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "f0ab7c32e179dbab",
+                "73b06b466be51a4c"
+            ]
+        ]
+    },
+    {
+        "id": "f0ab7c32e179dbab",
+        "type": "debug",
+        "z": "374390731e3fac81",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "4ccecb34aab171de",
+        "type": "debug",
+        "z": "374390731e3fac81",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "213ba9a2d9599988",
+        "type": "debug",
+        "z": "374390731e3fac81",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "73b06b466be51a4c",
+        "type": "ui_text",
+        "z": "374390731e3fac81",
+        "group": "47b0e7c7ae048951",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "string",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 730,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1a74bab8ee070a0a",
+        "type": "ui_text",
+        "z": "374390731e3fac81",
+        "group": "47b0e7c7ae048951",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "int16:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 730,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c1b3d5027f1382ab",
+        "type": "ui_text",
+        "z": "374390731e3fac81",
+        "group": "47b0e7c7ae048951",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "int32:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 730,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b786c9584a81d054",
+        "type": "comment",
+        "z": "374390731e3fac81",
+        "name": "Link to ROS guide",
+        "info": "http://wiki.ros.org/rosbridge_suite/Tutorials/RunningRosbridge",
+        "x": 220,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "f31cee7d.0ce31",
+        "type": "ros-server",
+        "z": "374390731e3fac81",
+        "url": "ws://localhost:9090/"
+    },
+    {
+        "id": "96e4978f26e00a22",
+        "type": "ui_group",
+        "name": "Publish",
+        "tab": "737bcf797d421423",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "47b0e7c7ae048951",
+        "type": "ui_group",
+        "name": "Subscribing",
+        "tab": "737bcf797d421423",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "737bcf797d421423",
+        "type": "ui_tab",
+        "name": "ROS-Bridge",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
