@@ -20,15 +20,15 @@ The Dashboard is no issue.
 ## Installing and using ROS-web-bridge
 [Rosbridge-suite](http://wiki.ros.org/rosbridge_suite)provides a JSON API to ROS functionality for non-ROS programs. To install in indigo use the following command:
 
-'''
+```
 sudo apt-get install ros-indigo-rosbridge-server
-'''
+```
 
 the pictures and simpel code example late in this document is using the standard *ROS-launch* command
 
-'''
+```
 roslaunch rosbridge_server rosbridge_websocket.launch
-'''
+```
 
 This will run rosbridge and create a WebSocket on port 9090 by default.
 
